@@ -4,7 +4,12 @@ Config of Vim following the screencast serie [Vim Mastery](https://laracasts.com
 
 ### INSTALL
 
-Clone in your ~/.vim and add to your .vimrc:
+* Clone in your ~/.vim and add to your .vimrc:
 ```
 so ~/.vim/vim-env/config.vim
+```
+* Load Vim
+* Install the plugins using Vundle:
+```
+:PluginInstall
 ```
