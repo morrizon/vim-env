@@ -17,3 +17,4 @@ so ~/.vim/vim-env/config.vim
 ```
 so ~/.vim/vim-env/php.vim
 ```
+* Download the colorscheme [vim-atom-dark](https://github.com/gosukiwi/vim-atom-dark) in the folder ~/.vim/colors
