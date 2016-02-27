@@ -13,3 +13,7 @@ so ~/.vim/vim-env/config.vim
 ```
 :PluginInstall
 ```
+* Load PHP config adding to ~/vim/after/ftplugin/php.vim:
+```
+so ~/.vim/vim-env/php.vim
+```
