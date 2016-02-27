@@ -14,6 +14,9 @@ Plugin 'joonty/vim-phpunitqf.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'geekjuice/vim-mocha'
 Plugin 'tpope/vim-vinegar'
+Plugin 'jwalton512/vim-blade'
+Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
