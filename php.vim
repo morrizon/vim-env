@@ -16,7 +16,7 @@ endif
 
 
 "phpmd config
-let g:phpqa_messdetector_ruleset = "~/.vim/phpmd.xml"
+let g:phpqa_messdetector_ruleset = "~/.vim/vim-env/phpmd.xml"
 let g:phpqa_messdetector_cmd='./vendor/bin/phpmd'
 
 " standard for plugin phpcs
