@@ -75,6 +75,7 @@ nmap <Leader>s :tag<space>
 "/
 let g:ctrlp_custom_ignore = 'vendor\|.git\|storage\|public/attachments\|public/libs\|public/vendor\|js\|third_party\|customers'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 execute "set <M-r>=\er"
 nmap <M-r> :CtrlPBufTag<CR>
 execute "set <M-e>=\ee"
@@ -94,6 +95,15 @@ nmap <M-1> :NERDTreeToggle<CR>
 "/
 set grepprg=ag                                                    "Use Ag to do the search.
 let g:grep_cmd_opts = '--line-numbers --noheading'
+
+"-----------------Laravel-Specific----------------"
+nmap <Leader>lr :e app/Http/routes.php<CR>
+nmap <Leader>lm :!php artisan make:
+nmap <Leader>lfc :CtrlP<CR>app/Http/Controllers/
+nmap <Leader>lfm :CtrlP<CR>app/
+nmap <Leader>lfv :CtrlP<CR>resources/views/
+nmap <Leader>lev :e resources/views/<CR>
+
 
 "-----------------Auto-Commands-------------------"
 
