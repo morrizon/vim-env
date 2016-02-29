@@ -17,6 +17,9 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'jwalton512/vim-blade'
 Plugin 'adoy/vim-php-refactoring-toolbox'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
+Plugin 'skwp/greplace.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

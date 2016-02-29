@@ -3,7 +3,7 @@ so ~/.vim/vim-env/plugins.vim
 "-------------------Some-Configs------------------"
 syntax enable                                        "Enable syntax highlight
 let mapleader=','                                    "The default leader is \, but a comma is much better.
-"set number                                           "Let's activate the line numbers.
+set nonumber                                         "Let's not activate the line numbers.
 set backspace=indent,eol,start                       "Make backspace behave like every other editor.
 
 "--------------Identation-------------------------"
@@ -16,11 +16,27 @@ set t_CO=256                                         "Use 256 colors. This is us
 colorscheme atom-dark                                "Colorscheme for GUI.
 colorscheme atom-dark-256                            "Colorscheme for GUI.
 "set guifont=Fira\ Code                               "Font for GUI (don't work in Gvim).
+"set macligatures                                     "We want pretty simbols, when available.
 set linespace=15                                     "Line-height for GUI (GVim), not in terminal.
 set guioptions-=l                                    "Lateral scrolls removal.
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
+set showtabline=2                                    "Show always the tab line.
+set guioptions-=e                                    "Disable GUI tabs.
+
+"Left padding
+"hi LineNr ctermfg=black ctermbg=white                "Coloring the number column.
+"hi foldcolumn ctermfg=black ctermbg=white            "Coloring the fold column.
+"set foldcolumn=2                                     "Width of the fold column.
+
+"Get rid of ugly split borders.
+hi vertsplit ctermfg=black ctermbg=black
+
+"Tab colors
+hi TabLineFill ctermfg=black ctermbg=white
+hi TabLine ctermfg=white ctermbg=black
+hi TabLineSel ctermfg=black ctermbg=white
 
 "------------------Searching----------------------"
 set hlsearch                                         "Enable highlight search results.
@@ -48,17 +64,36 @@ nmap <Leader><space> :nohlsearch<CR>
 "Help for netrw because F1 is used by desktop
 nmap <Leader>h <F1>
 
+"Help to use ctags
+nmap <Leader>s :tag<space>
+
+
 "-----------------Plugins-------------------------"
 
 "/
 "/ CtrlP
 "/
-let g:ctrlp_custom_ignore = 'vendor\|.git\|storage\|public/attachments\|public/libs\|public/vendor\|js'
-let g:ctrlp_match_window = 'top,order:btt,min:1,max:30,results:30'
-execute "set <M-e>=\er"
-execute "set <M-e>=\ee"
+let g:ctrlp_custom_ignore = 'vendor\|.git\|storage\|public/attachments\|public/libs\|public/vendor\|js\|third_party\|customers'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+execute "set <M-r>=\er"
 nmap <M-r> :CtrlPBufTag<CR>
+execute "set <M-e>=\ee"
 nmap <M-e> :CtrlPMRUFiles<CR>
+
+"/
+"/ NerdTree
+"/
+let NERDTreeHijackNetrw = 0
+
+"Make NERDTree easier to toggle.
+execute "set <M-1>=\e1"
+nmap <M-1> :NERDTreeToggle<CR>
+
+"/
+"/ Greplace.vim
+"/
+set grepprg=ag                                                    "Use Ag to do the search.
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 "-----------------Auto-Commands-------------------"
 
@@ -68,3 +103,23 @@ augroup autosourcing                                 "Delete all autocommands to
     autocmd!
     autocmd BufWritePost $MYVIMRC source %
 augroup END
+
+
+" Notes and Tips
+" - ctags or tags via CtrlP
+"   - Install exuberant-ctags and generate it with ctags -R
+"   - Press CTRL-ALT-] to go the tag.
+" - netrw/Vinager:
+"   - -: go to dirname of current file.
+"   - .: selected file in the command line as argument
+"   - !: same before in the command line as argument but with the !
+"   - d: create dir
+"   - %: create file
+"   - D: delete file/dir
+" - grep
+"   - Open fixlist via copen
+" - ag+the_silver_searcher
+"   - Install silversearcher-ag
+"   - Search with :Ag
+" - Greplace
+"   - Replace in a single window with :Gsearch and :Greplace
