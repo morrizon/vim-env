@@ -112,7 +112,9 @@ nmap <Leader>lev :e resources/views/<CR>
 
 augroup autosourcing                                 "Delete all autocommands to prevent having it defined twice.
     autocmd!
-    autocmd BufWritePost $MYVIMRC source %
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    autocmd BufWritePost $HOME/.vim/vim-env/config.vim source $MYVIMRC
+    autocmd BufWritePost $HOME/.vim/vim-env/plugins.vim source $MYVIMRC
 augroup END
 
 
