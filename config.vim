@@ -5,6 +5,7 @@ syntax enable                                        "Enable syntax highlight
 let mapleader=','                                    "The default leader is \, but a comma is much better.
 set nonumber                                         "Let's not activate the line numbers.
 set backspace=indent,eol,start                       "Make backspace behave like every other editor.
+set noerrorbells visualbell t_vb=                    "Bo damn bells!
 
 "--------------Identation-------------------------"
 set tabstop=4
