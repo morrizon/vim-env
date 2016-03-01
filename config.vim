@@ -60,6 +60,7 @@ nmap <C-E> :vertical res<CR>:res<CR>
 
 "Make it easy to edit the vimrc file.
 nmap <Leader>ev :tabedit $MYVIMRC<CR>
+nmap <Leader>es :e ~/.vim/snippets
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<CR>
 "Help for netrw because F1 is used by desktop
@@ -113,8 +114,8 @@ nmap <Leader>lev :e resources/views/<CR>
 augroup autosourcing                                 "Delete all autocommands to prevent having it defined twice.
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
-    autocmd BufWritePost $HOME/.vim/vim-env/config.vim source $MYVIMRC
-    autocmd BufWritePost $HOME/.vim/vim-env/plugins.vim source $MYVIMRC
+    autocmd BufWritePost ~/.vim/vim-env/config.vim source $MYVIMRC
+    autocmd BufWritePost ~/.vim/vim-env/plugins.vim source $MYVIMRC
 augroup END
 
 
