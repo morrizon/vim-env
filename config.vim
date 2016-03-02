@@ -137,3 +137,7 @@ augroup END
 "   - Search with :Ag
 " - Greplace
 "   - Replace in a single window with :Gsearch and :Greplace
+" - vim-surround
+"   - cs: change surround
+"   - ds: delete sorround
+"   - S (in visual mode): create surround
