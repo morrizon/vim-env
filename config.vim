@@ -6,6 +6,7 @@ let mapleader=','                                    "The default leader is \, b
 set nonumber                                         "Let's not activate the line numbers.
 set backspace=indent,eol,start                       "Make backspace behave like every other editor.
 set noerrorbells visualbell t_vb=                    "Bo damn bells!
+set tags=tags                                        "Avoid duplication problem when works in windows shared folder
 
 "--------------Identation-------------------------"
 set tabstop=4
@@ -69,6 +70,10 @@ nmap <Leader>h <F1>
 "Help to use ctags
 nmap <Leader>s :tag<space>
 
+"Sort PHP use statements
+""http://stackoverflow.com/questions/11531073/how-do-you-sort-a-range-of-lines-by-length
+vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
 
 "-----------------Plugins-------------------------"
 
@@ -106,6 +111,24 @@ nmap <Leader>lfm :CtrlP<CR>app/
 nmap <Leader>lfv :CtrlP<CR>resources/views/
 nmap <Leader>lev :e resources/views/<CR>
 
+"-----------------vim-php-namespace---------------"
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+"-----------------StanAngeloff-php.vim------------"
+function! PhpSyntaxOverride()
+    hi! def link phpDocTags phpDefine
+    hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
 
 "-----------------Auto-Commands-------------------"
 
@@ -141,3 +164,5 @@ augroup END
 "   - cs: change surround
 "   - ds: delete sorround
 "   - S (in visual mode): create surround
+" - vim-php-namespace
+"   - ctags: ctags-exuberant -R --PHP-kinds=+cf app src
