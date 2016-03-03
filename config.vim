@@ -1,12 +1,14 @@
 so ~/.vim/vim-env/plugins.vim
 
 "-------------------Some-Configs------------------"
-syntax enable                                        "Enable syntax highlight
+syntax enable                                        "Enable syntax highlight.
 let mapleader=','                                    "The default leader is \, but a comma is much better.
 set nonumber                                         "Let's not activate the line numbers.
 set backspace=indent,eol,start                       "Make backspace behave like every other editor.
 set noerrorbells visualbell t_vb=                    "Bo damn bells!
-set tags=tags                                        "Avoid duplication problem when works in windows shared folder
+set tags=tags                                        "Avoid duplication problem when works in windows shared folder.
+"set autowriteall                                     "Automatic save the file when switching buffers.
+"set complete=.,w,b,u                                 "Autocomplete from current file, windows and buffers.
 
 "--------------Identation-------------------------"
 set tabstop=4
@@ -64,16 +66,16 @@ nmap <Leader>ev :tabedit $MYVIMRC<CR>
 nmap <Leader>es :e ~/.vim/snippets
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<CR>
-"Help for netrw because F1 is used by desktop
+"Help for netrw because F1 is used by desktop.
 nmap <Leader>h <F1>
 
-"Help to use grep
+"Help to use grep.
 nmap <Leader>g :grep -riI 
 
-"Help to use ctags
+"Help to use ctags.
 nmap <Leader>s :tag<space>
 
-"Sort PHP use statements
+"Sort PHP use statements.
 ""http://stackoverflow.com/questions/11531073/how-do-you-sort-a-range-of-lines-by-length
 vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
@@ -122,7 +124,7 @@ endfunction
 autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
 
-"-----------------StanAngeloff-php.vim------------"
+"-----------------StanAngeloff-php----------------"
 function! PhpSyntaxOverride()
     hi! def link phpDocTags phpDefine
     hi! def link phpDocParam phpType
@@ -132,6 +134,9 @@ augroup phpSyntaxOverride
     autocmd!
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+"-----------------supertab------------------------"
+
 
 "-----------------Auto-Commands-------------------"
 
