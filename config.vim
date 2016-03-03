@@ -67,6 +67,9 @@ nmap <Leader><space> :nohlsearch<CR>
 "Help for netrw because F1 is used by desktop
 nmap <Leader>h <F1>
 
+"Help to use grep
+nmap <Leader>g :grep -riI 
+
 "Help to use ctags
 nmap <Leader>s :tag<space>
 
@@ -100,8 +103,8 @@ nmap <M-1> :NERDTreeToggle<CR>
 "/
 "/ Greplace.vim
 "/
-set grepprg=ag                                                    "Use Ag to do the search.
-let g:grep_cmd_opts = '--line-numbers --noheading'
+"set grepprg=ag                                                    "Use Ag to do the search.
+"let g:grep_cmd_opts = '--line-numbers --noheading'
 
 "-----------------Laravel-Specific----------------"
 nmap <Leader>lr :e app/Http/routes.php<CR>
