@@ -41,7 +41,7 @@ function! PhpqaEnableDisable()
 endfunction
 
 " map to disable/enable phpqa
-nnoremap <leader>p :call PhpqaEnableDisable()<cr>
+nnoremap <leader>q :call PhpqaEnableDisable()<cr>
 
 """"""""""""""""""
 " phpunitqf      "
@@ -61,7 +61,7 @@ endfunction
 
 " maps to run phpunit
 "map <leader>u :Test --bootstrap test/bootstrap.php %<cr>
-map <leader>u :Test %<cr>
+map <leader>t :Test %<cr>
 nnoremap <leader>f :call RunPHPUnitTestOld(0)<cr>
 
 set shiftwidth=4

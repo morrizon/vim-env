@@ -111,10 +111,10 @@ nmap <M-1> :NERDTreeToggle<CR>
 "/
 "/ vim-php-cs-fixer.vim
 "/
-let g:php_cs_fixer_level = "psr-2"
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+let g:php_cs_fixer_level = "psr2"
+nnoremap <silent><leader>pd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
-unmap <silent><leader>pcd
+"unmap <silent><leader>pcd
 
 "-----------------Laravel-Specific----------------"
 nmap <Leader>lr :e app/Http/routes.php<CR>
