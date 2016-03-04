@@ -108,6 +108,14 @@ nmap <M-1> :NERDTreeToggle<CR>
 "set grepprg=ag                                                    "Use Ag to do the search.
 "let g:grep_cmd_opts = '--line-numbers --noheading'
 
+"/
+"/ vim-php-cs-fixer.vim
+"/
+let g:php_cs_fixer_level = "psr-2"
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
+unmap <silent><leader>pcd
+
 "-----------------Laravel-Specific----------------"
 nmap <Leader>lr :e app/Http/routes.php<CR>
 nmap <Leader>lm :!php artisan make:
@@ -174,3 +182,5 @@ augroup END
 "   - S (in visual mode): create surround
 " - vim-php-namespace
 "   - ctags: ctags-exuberant -R --PHP-kinds=+cf app src
+" - vim-php-cs-fixer
+"   - Install php-cs-fixer
