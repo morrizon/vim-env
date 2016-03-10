@@ -14,6 +14,7 @@ set tags=tags                                        "Avoid duplication problem 
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set softtabstop=4
 
 "------------------Visuals-------------------------"
 set t_CO=256                                         "Use 256 colors. This is useful for Terminal Vim.
