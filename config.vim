@@ -145,8 +145,9 @@ augroup phpSyntaxOverride
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-"-----------------supertab------------------------"
-
+"-----------------phpqa---------------------------"
+let g:phpqa_messdetector_autorun = 0                 "Disable/Enable mess detector.
+let g:phpqa_codesniffer_autorun = 0                  "Disable/Enable code sniffer.
 
 "-----------------Auto-Commands-------------------"
 
