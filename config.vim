@@ -149,6 +149,15 @@ augroup END
 let g:phpqa_messdetector_autorun = 0                 "Disable/Enable mess detector.
 let g:phpqa_codesniffer_autorun = 0                  "Disable/Enable code sniffer.
 
+"-----------------pdv-(PHP-Documentor-for-Vim)----"
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+
+"-----------------ultisnips-----------------------"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 "-----------------Auto-Commands-------------------"
 
 " Automatically source the vimrc on save.
@@ -187,3 +196,5 @@ augroup END
 "   - ctags: ctags-exuberant -R --PHP-kinds=+cf app src
 " - vim-php-cs-fixer
 "   - Install php-cs-fixer
+" - ultisnips
+"   - :UltiSnipsEdit for edit snippets

@@ -28,3 +28,10 @@ so ~/.vim/vim-env/php.vim
 cd ~/.vim
 ln -s vim-env/snippets .
 ```
+
+#### ultisnips
+
+```
+cd ~/.vim
+ln -s vim-env/UltiSnips .
+```
