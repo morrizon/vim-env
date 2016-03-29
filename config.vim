@@ -17,8 +17,8 @@ set expandtab
 set softtabstop=4
 
 "------------------Visuals-------------------------"
-set t_CO=256                                         "Use 256 colors. This is useful for Terminal Vim.
-colorscheme atom-dark                                "Colorscheme for GUI.
+so ~/.vim/vim-env/xterm-fix.vim                      "See http://vim.wikia.com/wiki/Using_vim_color_schemes_with_Putty
+
 colorscheme atom-dark-256                            "Colorscheme for GUI.
 "set guifont=Fira\ Code                               "Font for GUI (don't work in Gvim).
 "set macligatures                                     "We want pretty simbols, when available.
@@ -42,6 +42,8 @@ hi vertsplit ctermfg=black ctermbg=black
 hi TabLineFill ctermfg=black ctermbg=white
 hi TabLine ctermfg=white ctermbg=black
 hi TabLineSel ctermfg=black ctermbg=white
+
+
 
 "------------------Searching----------------------"
 set hlsearch                                         "Enable highlight search results.
