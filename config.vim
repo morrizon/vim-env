@@ -88,9 +88,9 @@ vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr
 "/
 "/ CtrlP
 "/
-let g:ctrlp_custom_ignore = 'vendor\|.git\|storage\|public/attachments\|public/libs\|public/vendor\|js\|third_party\|customers'
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
-let g:ctrlp_clear_cache_on_exit=0 "Don't clear the cache when close vim.
+"let g:ctrlp_custom_ignore = 'vendor\|.git\|storage\|public/attachments\|public/libs\|public/vendor\|js\|third_party\|customers'
+"let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+"let g:ctrlp_clear_cache_on_exit=0 "Don't clear the cache when close vim.
 "let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 execute "set <M-r>=\er"
 nmap <M-r> :CtrlPBufTag<CR>
